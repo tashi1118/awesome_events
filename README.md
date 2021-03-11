@@ -1,24 +1,17 @@
-# README
+## 環境
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ruby 2.6.5
+rails 6.0.3
+nuxt 2.15.3
 
-Things you may want to cover:
+## 起動
 
-* Ruby version
+rails
+```
+dc up -d
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+nuxt
+```
+yarn dev
+```
