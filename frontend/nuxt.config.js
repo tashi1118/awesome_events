@@ -1,4 +1,4 @@
-export default {
+const config = {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
 
@@ -50,3 +50,11 @@ export default {
     dir: '../public'
   }
 }
+
+// 開発環境の場合はプロキシ(代理サーバ)を立ててapi通信を行う
+if (process.env.NODE_ENV === 'development') {
+  config.proxy = { '/api': 'http://localhost:3000' }
+}
+
+// 追記
+export default config
