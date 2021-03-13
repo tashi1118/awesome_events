@@ -43,7 +43,9 @@ const config = {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    prefix: '/api'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
