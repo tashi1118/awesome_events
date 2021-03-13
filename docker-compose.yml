@@ -14,6 +14,10 @@ services:
       - db
     stdin_open: true
     tty: true
+    environment:
+      DB_USERNAME: development
+      DB_PASSWORD: password
+      TZ: Asia/Tokyo
 
   db:
     image: mysql:8.0
