@@ -47,6 +47,12 @@ const config = {
     prefix: '/api'
   },
 
+  proxy: {
+    '/api': {
+      target: 'http://localhost:3000'
+    }
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: [/^element-ui/],
@@ -58,9 +64,10 @@ const config = {
 }
 
 // 開発環境の場合はプロキシ(代理サーバ)を立ててapi通信を行う
-if (process.env.NODE_ENV === 'development') {
-  config.proxy = { '/api': 'http://localhost:3000' }
-}
+// こっちだとバックエンドの値がundefinedになってうまくいかない
+// if (process.env.NODE_ENV === 'development') {
+//   config.proxy = { '/api': 'http://localhost:3000' }
+// }
 
 // 追記
 export default config
