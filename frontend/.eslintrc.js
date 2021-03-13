@@ -16,5 +16,16 @@ module.exports = {
   ],
   plugins: ['prettier'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    semi: [2, 'never'],
+    'vue/max-attributes-per-line': 'off',
+    'vue/no-v-html': 'off',
+    'prettier/prettier': [
+      'error',
+      {
+        semi: false,
+        singleQuote: true
+      }
+    ]
+  },
 }
