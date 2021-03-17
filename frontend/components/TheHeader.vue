@@ -7,7 +7,9 @@
       <v-spacer></v-spacer>
 
       <v-btn icon>
-        <v-icon @click="login">fas fa-lock</v-icon>
+        <nuxt-link to="/login">
+          <v-icon>fas fa-lock</v-icon>
+        </nuxt-link>
       </v-btn>
     </v-app-bar>
   </div>
@@ -21,13 +23,7 @@ export default {
     }
   },
 
-  methods: {
-    async login() {
-      const res = await this.$axios.$get('/auth/sign_in')
-      const redirectUrl = `${res.protocol}${res.host}/${res.auth_link}`
-      window.location.href = redirectUrl
-    },
-  },
+  methods: {},
 }
 </script>
 

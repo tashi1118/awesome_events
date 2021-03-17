@@ -20,10 +20,7 @@ const config = {
   css: ['element-ui/lib/theme-chalk/index.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [
-    '@/plugins/element-ui',
-    'plugins/vuetify'
-  ],
+  plugins: ['@/plugins/element-ui', 'plugins/vuetify'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -32,25 +29,45 @@ const config = {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify'
+    '@nuxtjs/vuetify',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/proxy'	
+    '@nuxtjs/proxy',
+    '@nuxtjs/auth',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    prefix: '/api'
+    prefix: '/api',
+    // baseURL: 'http://localhost:3000',
+  },
+
+  auth: {
+    redirect: {
+      login: '/login',
+      logout: '/login',
+      callback: false,
+      home: '/',
+    },
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/auth/sign_in', method: 'post' },
+          logout: false,
+          user: false,
+        },
+      },
+    },
   },
 
   proxy: {
     '/api': {
-      target: 'http://localhost:3000'
-    }
+      target: 'http://localhost:3000',
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -59,8 +76,8 @@ const config = {
   },
 
   generate: {
-    dir: '../public'
-  }
+    dir: '../public',
+  },
 }
 
 // 開発環境の場合はプロキシ(代理サーバ)を立ててapi通信を行う

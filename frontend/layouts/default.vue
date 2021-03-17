@@ -2,7 +2,7 @@
   <v-app>
     <TheHeader />
     <v-main>
-      <v-container fluid fill-height>
+      <v-container>
         <Nuxt />
       </v-container>
     </v-main>

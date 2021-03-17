@@ -2,6 +2,7 @@
   "name": "awesome_events",
   "private": true,
   "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
     "@rails/webpacker": "4.3.0",
